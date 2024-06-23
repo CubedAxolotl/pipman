@@ -95,22 +95,25 @@ def test():
     draw_text("SPECIAL", text_font1, pipcolor2, 190,33)
     draw_text("PERKS", text_font1, pipcolor3, 275,33)
 
+# Dont mind this, it dont worky
 def subTabIn():
     if DATAAC == True:
         test()
 
-
+# This sets the rinning program off, dont delete, otherwise it dont run. Idk why
 run = False
-
+# The program starts running
 run = True
-while run:
-    clock.tick(100)
-    pygame.display.update()
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+# This is our while loo, where everything the program does go down
+while run:
+    clock.tick(100) #Sets a fps
+    pygame.display.update() #updates display
+
+    for event in pygame.event.get(): # This event handler check various key presses
+        if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
             run = False
-        if event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
             if event.key == pygame.K_i:
                 print("i")
                 STAT()
@@ -123,12 +126,19 @@ while run:
             elif event.key == pygame.K_n:
                 print("m")
                 RADIO()
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 print("Right")
                 subTabIn()
                 print(DATAAC)
                 
             
+ # ------------- Thangs to know ----------
+ # Keep while run as neat a possible
+ # while run is not good rn, there is a bunch of nested else if
+ # These should be put on their own function 
+ # Don't draw inside of while run, it will get messy
+ # Drawing is layered, things you draw first will be in the layer bellow others
+ # This also means you need to fill the screan before changing to another tab, otherwise it would stack drawings
     
 
 pygame.quit()
