@@ -1,4 +1,4 @@
-import pygame #I am using Pygame as the game engine for this project
+import pygame #I am using Pygame as the game engine for this projec
 
 pygame.init() #Initializing Pygame
 
