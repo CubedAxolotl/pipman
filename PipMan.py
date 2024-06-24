@@ -140,6 +140,6 @@ while run:
  # Drawing is layered, things you draw first will be in the layer bellow others
  # This also means you need to fill the screan before changing to another tab, otherwise it would stack drawings
 
- # Meow
+ # Meoww
 
 pygame.quit()
