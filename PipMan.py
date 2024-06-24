@@ -139,6 +139,7 @@ while run:
  # Don't draw inside of while run, it will get messy
  # Drawing is layered, things you draw first will be in the layer bellow others
  # This also means you need to fill the screan before changing to another tab, otherwise it would stack drawings
-    
+
+ # Meow
 
 pygame.quit()
