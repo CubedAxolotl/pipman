@@ -32,63 +32,48 @@ pipcolortest = (255,0,0) # This is just red
 pipcolor5 = (0,0,0)
 
 #Logic :3
-RADIOAC = False
-DATAAC = False
 STATAC = False
 ITEMAC = False
+DATAAC = False
+RADIOAC = False
 
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
-def RADIO():
-    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
-    pygame.draw.lines(win, pipcolor1, False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
-    pygame.draw.rect(win, pipcolor5, (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
-    draw_text("STAT", text_font, pipcolor1, 120,5) # These draw the title of the tabs
-    draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("NOTES", text_font, pipcolor1, 420,5)
-    draw_text("RADIO", text_font, pipcolor1, 580,5)
-
-    RADIOAC = True #Tab status
-    DATAAC = False
-    ITEMAC = False
-    STATAC = False
-def DATA():
-    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
-    pygame.draw.lines(win, pipcolor1, False, ((0,25),(381,25), (381,15), (527,15),(527,25),(800,25)),linewidth)
-    pygame.draw.rect(win, pipcolor5, (410, 5, 86,16))
-    draw_text("STAT", text_font, pipcolor1, 120,5)
-    draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("NOTES", text_font, pipcolor1, 420,5)
-    draw_text("RADIO", text_font, pipcolor1, 580,5)     
-    RADIOAC = False
-    DATAAC = True
-    STATAC = False
-    ITEMAC = False
 def STAT():
     pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
     pygame.draw.lines(win, pipcolor1, False, ((0,25),(85,25), (85,15), (205,15),(205,25),(800,25)),linewidth)
     pygame.draw.rect(win, pipcolor5, (110, 5, 70,16))
     draw_text("STAT", text_font, pipcolor1, 120,5)
     draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("NOTES", text_font, pipcolor1, 420,5)
+    draw_text("DATA", text_font, pipcolor1, 420,5)
     draw_text("RADIO", text_font, pipcolor1, 580,5)
 
-    RADIOAC = False
-    DATAAC = False
-    ITEMAC = False
-    STATAC = True
 def ITEM():
     pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
     pygame.draw.lines(win, pipcolor1, False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
     pygame.draw.rect(win, pipcolor5, (250, 5, 86,16))
     draw_text("STAT", text_font, pipcolor1, 120,5)
     draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("NOTES", text_font, pipcolor1, 420,5)
+    draw_text("DATA", text_font, pipcolor1, 420,5)
     draw_text("RADIO", text_font, pipcolor1, 580,5)
 
-    RADIOAC = False
-    DATAAC = False
-    ITEMAC = True
-    STATAC = False
+def DATA():
+    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
+    pygame.draw.lines(win, pipcolor1, False, ((0,25),(381,25), (381,15), (517,15),(517,25),(800,25)),linewidth)
+    pygame.draw.rect(win, pipcolor5, (410, 5, 76,16))
+    draw_text("STAT", text_font, pipcolor1, 120,5)
+    draw_text("ITEMS", text_font, pipcolor1, 260,5)
+    draw_text("DATA", text_font, pipcolor1, 420,5)
+    draw_text("RADIO", text_font, pipcolor1, 580,5)     
+
+def RADIO():
+    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
+    pygame.draw.lines(win, pipcolor1, False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
+    pygame.draw.rect(win, pipcolor5, (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
+    draw_text("STAT", text_font, pipcolor1, 120,5) # These draw the title of the tabs
+    draw_text("ITEMS", text_font, pipcolor1, 260,5)
+    draw_text("DATA", text_font, pipcolor1, 420,5)
+    draw_text("RADIO", text_font, pipcolor1, 580,5)
+
 def test():
     #pygame.draw.rect(win, pipcolortest, (115,30, 85,30))
     draw_text("STATUS", text_font1, pipcolor1, 115,33)
