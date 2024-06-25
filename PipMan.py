@@ -132,10 +132,25 @@ while run:
     clock.tick(100) #Sets a fps
     pygame.display.update() #updates display
     for event in pygame.event.get(): # This event handler check various key presses
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
             run = False
-        keydec()
-                
+        if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
+            if event.key == pygame.K_i:
+                print("i")
+                STAT()
+            elif event.key == pygame.K_k:
+                print("k")
+                ITEM()
+            elif event.key == pygame.K_m:
+                print("m")
+                DATA()
+            elif event.key == pygame.K_n:
+                print("m")
+                RADIO()
+            elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
+                print("Right")
+                subTabIn()
+                print(DATAAC)            
             
  # ------------- Thangs to know ----------
  # Keep while run as neat a possible
