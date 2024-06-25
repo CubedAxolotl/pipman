@@ -131,7 +131,10 @@ run = True
 while run:
     clock.tick(100) #Sets a fps
     pygame.display.update() #updates display
-    keydec()
+    for event in pygame.event.get(): # This event handler check various key presses
+        if event.type == pygame.QUIT:
+            run = False
+        keydec()
                 
             
  # ------------- Thangs to know ----------
