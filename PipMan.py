@@ -95,21 +95,8 @@ def test():
     draw_text("SPECIAL", text_font1, pipcolor2, 190,33)
     draw_text("PERKS", text_font1, pipcolor3, 275,33)
 
-# Dont mind this, it dont worky
-def subTabIn():
-    if DATAAC == True:
-        test()
 
-# This sets the rinning program off, dont delete, otherwise it dont run. Idk why
-run = False
-# The program starts running
-run = True
-
-# This is our while loo, where everything the program does go down
-while run:
-    clock.tick(100) #Sets a fps
-    pygame.display.update() #updates display
-
+def keydec():
     for event in pygame.event.get(): # This event handler check various key presses
         if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
             run = False
@@ -130,6 +117,21 @@ while run:
                 print("Right")
                 subTabIn()
                 print(DATAAC)
+# Dont mind this, it dont worky
+def subTabIn():
+    if DATAAC == True:
+        test()
+
+# This sets the rinning program off, dont delete, otherwise it dont run. Idk why
+run = False
+# The program starts running
+run = True
+
+# This is our while loo, where everything the program does go down
+while run:
+    clock.tick(100) #Sets a fps
+    pygame.display.update() #updates display
+    keydec()
                 
             
  # ------------- Thangs to know ----------
