@@ -94,34 +94,7 @@ def test():
     draw_text("STATUS", text_font1, pipcolor1, 115,33)
     draw_text("SPECIAL", text_font1, pipcolor2, 190,33)
     draw_text("PERKS", text_font1, pipcolor3, 275,33)
-
-
-def keydec():
-    for event in pygame.event.get(): # This event handler check various key presses
-        if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
-            run = False
-        if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
-            if event.key == pygame.K_i:
-                print("i")
-                STAT()
-            elif event.key == pygame.K_k:
-                print("k")
-                ITEM()
-            elif event.key == pygame.K_m:
-                print("m")
-                DATA()
-            elif event.key == pygame.K_n:
-                print("m")
-                RADIO()
-            elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
-                print("Right")
-                subTabIn()
-                print(DATAAC)
-# Dont mind this, it dont worky
-def subTabIn():
-    if DATAAC == True:
-        test()
-
+    
 # This sets the rinning program off, dont delete, otherwise it dont run. Idk why
 run = False
 # The program starts running
