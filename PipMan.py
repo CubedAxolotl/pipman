@@ -39,7 +39,7 @@ ITEMAC = False
 
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
 def RADIO():
-    win.fill(pipcolor5) # In pygame you have to manually refill the screen everytime you draw pic
+    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
     pygame.draw.lines(win, pipcolor1, False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
     pygame.draw.rect(win, pipcolor5, (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
     draw_text("STAT", text_font, pipcolor1, 120,5) # These draw the title of the tabs
@@ -52,7 +52,7 @@ def RADIO():
     ITEMAC = False
     STATAC = False
 def DATA():
-    win.fill(pipcolor5)
+    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
     pygame.draw.lines(win, pipcolor1, False, ((0,25),(381,25), (381,15), (527,15),(527,25),(800,25)),linewidth)
     pygame.draw.rect(win, pipcolor5, (410, 5, 86,16))
     draw_text("STAT", text_font, pipcolor1, 120,5)
@@ -64,7 +64,7 @@ def DATA():
     STATAC = False
     ITEMAC = False
 def STAT():
-    win.fill(pipcolor5)
+    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
     pygame.draw.lines(win, pipcolor1, False, ((0,25),(85,25), (85,15), (205,15),(205,25),(800,25)),linewidth)
     pygame.draw.rect(win, pipcolor5, (110, 5, 70,16))
     draw_text("STAT", text_font, pipcolor1, 120,5)
@@ -77,7 +77,7 @@ def STAT():
     ITEMAC = False
     STATAC = True
 def ITEM():
-    win.fill(pipcolor5)
+    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
     pygame.draw.lines(win, pipcolor1, False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
     pygame.draw.rect(win, pipcolor5, (250, 5, 86,16))
     draw_text("STAT", text_font, pipcolor1, 120,5)
@@ -121,6 +121,7 @@ while run:
                 print("m")
                 RADIO()
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
+                test()
                 print("Right")
                 print(DATAAC)            
             
