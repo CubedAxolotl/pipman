@@ -122,7 +122,6 @@ while run:
                 RADIO()
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 print("Right")
-                subTabIn()
                 print(DATAAC)            
             
  # ------------- Thangs to know ----------
