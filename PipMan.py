@@ -103,7 +103,7 @@ while run:
                 print("m")
                 DATA()
             elif event.key == pygame.K_n:
-                print("m")
+                print("n")
                 RADIO()
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 test()
