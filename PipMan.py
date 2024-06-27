@@ -38,6 +38,9 @@ def STAT():
     draw_text("DATA", text_font, colors['1'], 420,5)
     draw_text("RADIO", text_font, colors['1'], 580,5)
 
+    if subTabSelec == 0:
+        test()
+
 def ITEM():
     pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
     pygame.draw.lines(win, colors['1'], False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
@@ -76,7 +79,10 @@ run = False
 # The program starts running
 run = True
 
+subTabSelec = {"stat": 0}
+
 def keyDetect():
+
         if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
             if event.key == pygame.K_i:
                 print("i")
@@ -107,8 +113,11 @@ def keyDetect():
                 tabBools["radio"] = True
                 print(tabBools)
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
-                test()
                 print("Right") 
+                print(subTabSelec["stat"])
+            elif event.key == pygame.K_LEFT:
+                print("Left")
+                print(subTabSelec["stat"])
 
 def tabRender():
     if tabBools["stat"]:
@@ -119,6 +128,9 @@ def tabRender():
         DATA()
     elif tabBools["radio"]:
         RADIO()
+
+
+
 # This is our while loo, where everything the program does go down
 while run:
     clock.tick(100) #Sets a fps
