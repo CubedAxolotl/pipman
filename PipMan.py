@@ -85,7 +85,6 @@ def keyDetect():
                 tabBools["data"] = False
                 tabBools["radio"] = False
                 print(tabBools)
-                STAT()
             elif event.key == pygame.K_k:
                 print("k")
                 tabBools["stat"] = False
@@ -93,7 +92,6 @@ def keyDetect():
                 tabBools["data"] = False
                 tabBools["radio"] = False
                 print(tabBools)
-                ITEM()
             elif event.key == pygame.K_m:
                 print("m")
                 tabBools["stat"] = False
@@ -101,7 +99,6 @@ def keyDetect():
                 tabBools["data"] = True
                 tabBools["radio"] = False
                 print(tabBools)
-                DATA()
             elif event.key == pygame.K_n:
                 print("n")
                 tabBools["stat"] = False
@@ -109,11 +106,19 @@ def keyDetect():
                 tabBools["data"] = False
                 tabBools["radio"] = True
                 print(tabBools)
-                RADIO()
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 test()
                 print("Right") 
 
+def tabRender():
+    if tabBools["stat"]:
+        STAT()
+    elif tabBools["item"]:
+        ITEM()
+    elif tabBools["data"]:
+        DATA()
+    elif tabBools["radio"]:
+        RADIO()
 # This is our while loo, where everything the program does go down
 while run:
     clock.tick(100) #Sets a fps
@@ -122,6 +127,7 @@ while run:
         if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
             run = False        
         keyDetect()
+        tabRender()
  # ------------- Thangs to know ----------
  # Keep while run as neat a possible
  # while run is not good rn, there is a bunch of nested else if
