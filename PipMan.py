@@ -28,6 +28,8 @@ colors = {"1": (0,238,0), "2": (0,142,0), "3": (0,95,0), "4": (0,47,0), "5": (0,
 #Logic
 tabBools = {"stat": True, "item": False, "data": False, "radio": False}
 
+subTabSelec = {"stat": 0} #each tab has different subtabs, this is a list of each (only one rn)
+
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
 def STAT():
     pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
@@ -38,7 +40,7 @@ def STAT():
     draw_text("DATA", text_font, colors['1'], 420,5)
     draw_text("RADIO", text_font, colors['1'], 580,5)
 
-    if subTabSelec == 0:
+    if subTabSelec == 0: #checks if subTabSelect is 0 and displays the subtab
         test()
 
 def ITEM():
@@ -79,8 +81,7 @@ run = False
 # The program starts running
 run = True
 
-subTabSelec = {"stat": 0}
-
+# Basically moved the key events to this funct
 def keyDetect():
 
         if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
@@ -119,6 +120,7 @@ def keyDetect():
                 print("Left")
                 print(subTabSelec["stat"])
 
+# Now that the key events are separate, this will render the tabs based on a bool lis, the list is in line 29
 def tabRender():
     if tabBools["stat"]:
         STAT()
@@ -138,8 +140,8 @@ while run:
     for event in pygame.event.get(): # This event handler check various key presses
         if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
             run = False        
-        keyDetect()
-        tabRender()
+        keyDetect() # keys are detected
+        tabRender() # the screen is updated.
  # ------------- Thangs to know ----------
  # Keep while run as neat a possible
  # while run is not good rn, there is a bunch of nested else if
