@@ -80,15 +80,31 @@ def keyDetect():
         if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
             if event.key == pygame.K_i:
                 print("i")
+                tabBools["data"] = True
+                tabBools["item"] = False
+                tabBools["radio"] = False
+                tabBools["stat"] = False
                 STAT()
             elif event.key == pygame.K_k:
                 print("k")
+                tabBools["data"] = False
+                tabBools["item"] = True
+                tabBools["radio"] = False
+                tabBools["stat"] = False
                 ITEM()
             elif event.key == pygame.K_m:
                 print("m")
+                tabBools["data"] = False
+                tabBools["item"] = False
+                tabBools["radio"] = True
+                tabBools["stat"] = False
                 DATA()
             elif event.key == pygame.K_n:
                 print("n")
+                tabBools["data"] = False
+                tabBools["item"] = False
+                tabBools["radio"] = False
+                tabBools["stat"] = True
                 RADIO()
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 test()
