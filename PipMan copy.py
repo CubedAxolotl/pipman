@@ -23,6 +23,7 @@ class pip():
     def pip_loop(self):
         while self.running:
             self.get_events()
+            print(self.actions)
             #self.update()
            # self.render()
 
@@ -33,20 +34,23 @@ class pip():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_i:
                     self.actions['i'] = True
+                    self.actions['k'] = False
+                    self.actions['m'] = False
+                    self.actions['n'] = False
                 if event.key == pygame.K_k:
+                    self.actions['i'] = False
                     self.actions['k'] = True
+                    self.actions['m'] = False
+                    self.actions['n'] = False
                 if event.key == pygame.K_m:
+                    self.actions['i'] = False
+                    self.actions['k'] = False
                     self.actions['m'] = True
+                    self.actions['n'] = False
                 if event.key == pygame.K_n:
-                    self.actions['n'] = True
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_i:
-                    self.actions['i'] = True
-                if event.key == pygame.K_k:
-                    self.actions['k'] = True
-                if event.key == pygame.K_m:
-                    self.actions['m'] = True
-                if event.key == pygame.K_n:
+                    self.actions['i'] = False
+                    self.actions['k'] = False
+                    self.actions['m'] = False
                     self.actions['n'] = True
 
 if __name__ == "__main__":
