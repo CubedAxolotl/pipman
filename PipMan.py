@@ -135,20 +135,33 @@ def tabRender():
         RADIO()
 
 def subTabPlus():
+    global tabBools
+    global subTabSelec
+
     if tabBools['stat']:
-        subTabSelec["stat"]= subTabSelec["stat"]+1
+        if subTabSelec["stat"] < subTabBounds["statR"]:  
+            subTabSelec["stat"] += 1
     elif tabBools["item"]:
-        subTabSelec["item"]= subTabSelec["item"]+1
+        if subTabSelec["item"] < subTabBounds["itemR"]:  
+            subTabSelec["item"] += 1
     elif tabBools["data"]:
-        subTabSelec["data"]= subTabSelec["data"]+1
+        if subTabSelec["data"] < subTabBounds["dataR"]:  
+            subTabSelec["data"] += 1
 
 def subTabMinus():
+    global tabBools
+    global subTabSelec
+
     if tabBools['stat']:
-        subTabSelec["stat"]= subTabSelec["stat"]-1
+        if subTabSelec["stat"] > subTabBounds["statL"]:  
+            subTabSelec["stat"] -= 1
     elif tabBools["item"]:
-        subTabSelec["item"]= subTabSelec["item"]-1
+        if subTabSelec["item"] > subTabBounds["itemL"]:  
+            subTabSelec["item"] -= 1
     elif tabBools["data"]:
-        subTabSelec["data"]= subTabSelec["data"]-1
+        if subTabSelec["data"] > subTabBounds["dataL"]:  
+            subTabSelec["data"] -= 1
+
 # This is our while loo, where everything the program does go down
 while run:
     clock.tick(100) #Sets a fps
