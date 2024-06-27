@@ -33,7 +33,7 @@ subTabSelec = {"stat": 0, "item": 0, "data": 0, "radio": 0} #each tab has differ
 subTabBounds = {"statL": 0, "itemL": 0, "dataL": 0, "radioL": 0, "statR": 2, "itemR": 10, "dataR": 3, "radioR": 0}
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
 def STAT():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
     pygame.draw.lines(win, colors['1'], False, ((0,25),(85,25), (85,15), (205,15),(205,25),(800,25)),linewidth)
     pygame.draw.rect(win, colors['5'], (110, 5, 70,16))
     draw_text("STAT", text_font, colors['1'], 120,5)
@@ -41,11 +41,11 @@ def STAT():
     draw_text("DATA", text_font, colors['1'], 420,5)
     draw_text("RADIO", text_font, colors['1'], 580,5)
 
-    if subTabSelec == 0: #checks if subTabSelect is 0 and displays the subtab
+    if subTabSelec["stat"] == 0: #checks if subTabSelect is 0 and displays the subtab
         test()
 
 def ITEM():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
     pygame.draw.lines(win, colors['1'], False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
     pygame.draw.rect(win, colors['5'], (250, 5, 86,16))
     draw_text("STAT", text_font, colors['1'], 120,5)
@@ -54,7 +54,7 @@ def ITEM():
     draw_text("RADIO", text_font, colors['1'], 580,5)
 
 def DATA():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
     pygame.draw.lines(win, colors['1'], False, ((0,25),(381,25), (381,15), (517,15),(517,25),(800,25)),linewidth)
     pygame.draw.rect(win, colors['5'], (410, 5, 76,16))
     draw_text("STAT", text_font, colors['1'], 120,5)
@@ -63,7 +63,7 @@ def DATA():
     draw_text("RADIO", text_font, colors['1'], 580,5)     
 
 def RADIO():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
     pygame.draw.lines(win, colors['1'], False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
     pygame.draw.rect(win, colors['5'], (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
     draw_text("STAT", text_font, colors['1'], 120,5) # These draw the title of the tabs
