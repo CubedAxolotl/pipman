@@ -24,61 +24,52 @@ def draw_text(text, font, text_col, x, y):
     win.blit(img, (x,y))
 
 #----- The following is just assinging rgb of the color pallete
-pipcolor1 = (0,238,0)
-pipcolor2 = (0,142,0)
-pipcolor3 = (0,95,0)
-pipcolor4 = (0,47,0)
-pipcolortest = (255,0,0) # This is just red
-pipcolor5 = (0,0,0)
-
-#Logic :3
-STATAC = False
-ITEMAC = False
-DATAAC = False
-RADIOAC = False
+colors = {"1": (0,238,0), "2": (0,142,0), "3": (0,95,0), "4": (0,47,0), "5": (0,0,0), "test": (255,0,0)}
+#Logic
+tabBools = {"stat": True, "item": False, "data": False, "radio": False}
 
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
 def STAT():
-    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
-    pygame.draw.lines(win, pipcolor1, False, ((0,25),(85,25), (85,15), (205,15),(205,25),(800,25)),linewidth)
-    pygame.draw.rect(win, pipcolor5, (110, 5, 70,16))
-    draw_text("STAT", text_font, pipcolor1, 120,5)
-    draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("DATA", text_font, pipcolor1, 420,5)
-    draw_text("RADIO", text_font, pipcolor1, 580,5)
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.lines(win, colors['1'], False, ((0,25),(85,25), (85,15), (205,15),(205,25),(800,25)),linewidth)
+    pygame.draw.rect(win, colors['5'], (110, 5, 70,16))
+    draw_text("STAT", text_font, colors['1'], 120,5)
+    draw_text("ITEMS", text_font, colors['1'], 260,5)
+    draw_text("DATA", text_font, colors['1'], 420,5)
+    draw_text("RADIO", text_font, colors['1'], 580,5)
 
 def ITEM():
-    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
-    pygame.draw.lines(win, pipcolor1, False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
-    pygame.draw.rect(win, pipcolor5, (250, 5, 86,16))
-    draw_text("STAT", text_font, pipcolor1, 120,5)
-    draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("DATA", text_font, pipcolor1, 420,5)
-    draw_text("RADIO", text_font, pipcolor1, 580,5)
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.lines(win, colors['1'], False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
+    pygame.draw.rect(win, colors['5'], (250, 5, 86,16))
+    draw_text("STAT", text_font, colors['1'], 120,5)
+    draw_text("ITEMS", text_font, colors['1'], 260,5)
+    draw_text("DATA", text_font, colors['1'], 420,5)
+    draw_text("RADIO", text_font, colors['1'], 580,5)
 
 def DATA():
-    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
-    pygame.draw.lines(win, pipcolor1, False, ((0,25),(381,25), (381,15), (517,15),(517,25),(800,25)),linewidth)
-    pygame.draw.rect(win, pipcolor5, (410, 5, 76,16))
-    draw_text("STAT", text_font, pipcolor1, 120,5)
-    draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("DATA", text_font, pipcolor1, 420,5)
-    draw_text("RADIO", text_font, pipcolor1, 580,5)     
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.lines(win, colors['1'], False, ((0,25),(381,25), (381,15), (517,15),(517,25),(800,25)),linewidth)
+    pygame.draw.rect(win, colors['5'], (410, 5, 76,16))
+    draw_text("STAT", text_font, colors['1'], 120,5)
+    draw_text("ITEMS", text_font, colors['1'], 260,5)
+    draw_text("DATA", text_font, colors['1'], 420,5)
+    draw_text("RADIO", text_font, colors['1'], 580,5)     
 
 def RADIO():
-    pygame.draw.rect(win, pipcolor5, ((0,0, 800,27)))
-    pygame.draw.lines(win, pipcolor1, False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
-    pygame.draw.rect(win, pipcolor5, (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
-    draw_text("STAT", text_font, pipcolor1, 120,5) # These draw the title of the tabs
-    draw_text("ITEMS", text_font, pipcolor1, 260,5)
-    draw_text("DATA", text_font, pipcolor1, 420,5)
-    draw_text("RADIO", text_font, pipcolor1, 580,5)
+    pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
+    pygame.draw.lines(win, colors['1'], False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
+    pygame.draw.rect(win, colors['5'], (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
+    draw_text("STAT", text_font, colors['1'], 120,5) # These draw the title of the tabs
+    draw_text("ITEMS", text_font, colors['1'], 260,5)
+    draw_text("DATA", text_font, colors['1'], 420,5)
+    draw_text("RADIO", text_font, colors['1'], 580,5)
 
 def test():
-    #pygame.draw.rect(win, pipcolortest, (115,30, 85,30))
-    draw_text("STATUS", text_font1, pipcolor1, 115,33)
-    draw_text("SPECIAL", text_font1, pipcolor2, 190,33)
-    draw_text("PERKS", text_font1, pipcolor3, 275,33)
+    #pygame.draw.rect(win, colors['test'], (115,30, 85,30))
+    draw_text("STATUS", text_font1, colors['1'], 115,33)
+    draw_text("SPECIAL", text_font1, colors['2'], 190,33)
+    draw_text("PERKS", text_font1, colors['3'], 275,33)
     
 # This sets the rinning program off, dont delete, otherwise it dont run. Idk why
 run = False
