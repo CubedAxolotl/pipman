@@ -28,8 +28,9 @@ colors = {"1": (0,238,0), "2": (0,142,0), "3": (0,95,0), "4": (0,47,0), "5": (0,
 #Logic
 tabBools = {"stat": True, "item": False, "data": False, "radio": False}
 
-subTabSelec = {"stat": 0} #each tab has different subtabs, this is a list of each (only one rn)
+subTabSelec = {"stat": 0, "item": 0, "data": 0, "radio": 0} #each tab has different subtabs, this is a list of each (only one rn)
 
+subTabBounds = {"statL": 0, "itemL": 0, "dataL": 0, "radioL": 0, "statR": 2, "itemR": 10, "dataR": 3, "radioR": 0}
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
 def STAT():
     pygame.draw.rect(win, colors['5'], ((0,0, 800,27)))
@@ -115,10 +116,12 @@ def keyDetect():
                 print(tabBools)
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 print("Right") 
-                print(subTabSelec["stat"])
+                subTabPlus()
+                print(subTabSelec)
             elif event.key == pygame.K_LEFT:
                 print("Left")
-                print(subTabSelec["stat"])
+                subTabMinus()
+                print(subTabSelec)
 
 # Now that the key events are separate, this will render the tabs based on a bool lis, the list is in line 29
 def tabRender():
@@ -131,8 +134,21 @@ def tabRender():
     elif tabBools["radio"]:
         RADIO()
 
+def subTabPlus():
+    if tabBools['stat']:
+        subTabSelec["stat"]= subTabSelec["stat"]+1
+    elif tabBools["item"]:
+        subTabSelec["item"]= subTabSelec["item"]+1
+    elif tabBools["data"]:
+        subTabSelec["data"]= subTabSelec["data"]+1
 
-
+def subTabMinus():
+    if tabBools['stat']:
+        subTabSelec["stat"]= subTabSelec["stat"]-1
+    elif tabBools["item"]:
+        subTabSelec["item"]= subTabSelec["item"]-1
+    elif tabBools["data"]:
+        subTabSelec["data"]= subTabSelec["data"]-1
 # This is our while loo, where everything the program does go down
 while run:
     clock.tick(100) #Sets a fps
