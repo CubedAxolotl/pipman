@@ -76,13 +76,7 @@ run = False
 # The program starts running
 run = True
 
-# This is our while loo, where everything the program does go down
-while run:
-    clock.tick(100) #Sets a fps
-    pygame.display.update() #updates display
-    for event in pygame.event.get(): # This event handler check various key presses
-        if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
-            run = False
+def keyDetect():
         if event.type == pygame.KEYDOWN: # These check for the press of key and call a specifi func
             if event.key == pygame.K_i:
                 print("i")
@@ -98,9 +92,16 @@ while run:
                 RADIO()
             elif event.key == pygame.K_RIGHT: # This dont worky, its a test.
                 test()
-                print("Right")
-                print(DATAAC)            
-            
+                print("Right") 
+
+# This is our while loo, where everything the program does go down
+while run:
+    clock.tick(100) #Sets a fps
+    pygame.display.update() #updates display
+    for event in pygame.event.get(): # This event handler check various key presses
+        if event.type == pygame.QUIT: # If the X button in the is hit then it stops running
+            run = False        
+        keyDetect()
  # ------------- Thangs to know ----------
  # Keep while run as neat a possible
  # while run is not good rn, there is a bunch of nested else if
