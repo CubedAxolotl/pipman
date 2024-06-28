@@ -42,7 +42,17 @@ def STAT():
     draw_text("RADIO", text_font, colors['1'], 580,5)
 
     if subTabSelec["stat"] == 0: #checks if subTabSelect is 0 and displays the subtab
-        test()
+        draw_text("STATUS", text_font1, colors['1'], 115,33)
+        draw_text("SPECIAL", text_font1, colors['2'], 190,33)
+        draw_text("PERKS", text_font1, colors['3'], 275,33)
+    if subTabSelec["stat"] == 1:
+        draw_text("STATUS", text_font1, colors['2'], 40,33)
+        draw_text("SPECIAL", text_font1, colors['1'], 115,33)
+        draw_text("PERKS", text_font1, colors['2'], 200,33)
+    if subTabSelec["stat"] == 2:
+        draw_text("SPECIAL", text_font1, colors['2'], 30,33)
+        draw_text("PERKS", text_font1, colors['1'], 115,33)
+
 
 def ITEM():
     pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
@@ -71,12 +81,6 @@ def RADIO():
     draw_text("DATA", text_font, colors['1'], 420,5)
     draw_text("RADIO", text_font, colors['1'], 580,5)
 
-def test():
-    #pygame.draw.rect(win, colors['test'], (115,30, 85,30))
-    draw_text("STATUS", text_font1, colors['1'], 115,33)
-    draw_text("SPECIAL", text_font1, colors['2'], 190,33)
-    draw_text("PERKS", text_font1, colors['3'], 275,33)
-    
 # This sets the rinning program off, dont delete, otherwise it dont run. Idk why
 run = False
 # The program starts running
