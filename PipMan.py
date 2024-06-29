@@ -10,9 +10,9 @@ pygame_icon = pygame.image.load("icon.png") # This creates an object from a png
 pygame.display.set_icon(pygame_icon) # This takes that object and sets it as the icon for the app
 
 #------ The Following are just formating settings-------
-text_zise= 30 # Text side of the tab letters
-text_font = pygame.font.SysFont("Monofonto",text_zise) # setting two font settings
-text_font1 = pygame.font.SysFont("Monofonto", 25)
+font30 = pygame.font.SysFont("Monofonto",30) # setting two font settings
+font25 = pygame.font.SysFont("Monofonto", 25)
+font20 = pygame.font.SysFont("Monofonto", 20)
 linewidth = 2 # Setting the width of the line that runs across the top
 
 clock = pygame.time.Clock() # This sets a uniform fps
@@ -33,53 +33,88 @@ subTabSelec = {"stat": 0, "item": 0, "data": 0, "radio": 0} #each tab has differ
 subTabBounds = {"statL": 0, "itemL": 0, "dataL": 0, "radioL": 0, "statR": 2, "itemR": 10, "dataR": 3, "radioR": 0}
 # The following 5 funct are to display the tab you are on, look at the radio func to see how they are set up
 def STAT():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
+    win.fill(colors["5"])
     pygame.draw.lines(win, colors['1'], False, ((0,25),(85,25), (85,15), (205,15),(205,25),(800,25)),linewidth)
     pygame.draw.rect(win, colors['5'], (110, 5, 70,16))
-    draw_text("STAT", text_font, colors['1'], 120,5)
-    draw_text("ITEMS", text_font, colors['1'], 260,5)
-    draw_text("DATA", text_font, colors['1'], 420,5)
-    draw_text("RADIO", text_font, colors['1'], 580,5)
+    draw_text("STAT", font30, colors['1'], 120,5)
+    draw_text("ITEMS", font30, colors['1'], 260,5)
+    draw_text("DATA", font30, colors['1'], 420,5)
+    draw_text("RADIO", font30, colors['1'], 580,5)
 
     if subTabSelec["stat"] == 0: #checks if subTabSelect is 0 and displays the subtab
-        draw_text("STATUS", text_font1, colors['1'], 115,33)
-        draw_text("SPECIAL", text_font1, colors['2'], 190,33)
-        draw_text("PERKS", text_font1, colors['3'], 275,33)
+        #subtabs
+        draw_text("STATUS", font25, colors['1'], 115,33)
+        draw_text("SPECIAL", font25, colors['2'], 190,33)
+        draw_text("PERKS", font25, colors['3'], 275,33)
+
+        #bottom bar
+        pygame.draw.rect(win, colors["3"], (0,460, 150, 470))
+        pygame.draw.rect(win, colors["3"], (153,460, 494, 470)) ### Rectangles
+        pygame.draw.rect(win, colors["3"], (650,460, 700, 470))
+
+        draw_text("HP 171/171", font25, colors['1'], 20,463)
+        draw_text("Level 19", font25, colors['1'], 180,463)  ### Letters
+        draw_text("AP    80", font25, colors['1'], 680,463)
+
+        pygame.draw.lines(win, colors["1"], True, ((250,465), (626, 465), (626, 475), (250,475)), linewidth) ### Lvl Bar
+
     if subTabSelec["stat"] == 1:
-        draw_text("STATUS", text_font1, colors['2'], 40,33)
-        draw_text("SPECIAL", text_font1, colors['1'], 115,33)
-        draw_text("PERKS", text_font1, colors['2'], 200,33)
+        draw_text("STATUS", font25, colors['2'], 40,33)
+        draw_text("SPECIAL", font25, colors['1'], 115,33)
+        draw_text("PERKS", font25, colors['2'], 200,33)
+
+        #bottom bar
+        pygame.draw.rect(win, colors["3"], (0,460, 150, 470))
+        pygame.draw.rect(win, colors["3"], (153,460, 494, 470)) ### Rectangles
+        pygame.draw.rect(win, colors["3"], (650,460, 700, 470))
+
+        draw_text("HP 171/171", font25, colors['1'], 20,463)
+        draw_text("Level 19", font25, colors['1'], 180,463)  ### Letters
+        draw_text("AP    80", font25, colors['1'], 680,463)
+
+        pygame.draw.lines(win, colors["1"], True, ((250,465), (626, 465), (626, 475), (250,475)), linewidth) ### Lvl Bar
     if subTabSelec["stat"] == 2:
-        draw_text("SPECIAL", text_font1, colors['2'], 30,33)
-        draw_text("PERKS", text_font1, colors['1'], 115,33)
+        draw_text("SPECIAL", font25, colors['2'], 30,33)
+        draw_text("PERKS", font25, colors['1'], 115,33)
+
+        #bottom bar
+        pygame.draw.rect(win, colors["3"], (0,460, 150, 470))
+        pygame.draw.rect(win, colors["3"], (153,460, 494, 470)) ### Rectangles
+        pygame.draw.rect(win, colors["3"], (650,460, 700, 470))
+
+        draw_text("HP 171/171", font25, colors['1'], 20,463)
+        draw_text("Level 19", font25, colors['1'], 180,463)  ### Letters
+        draw_text("AP    80", font25, colors['1'], 680,463)
+
+        pygame.draw.lines(win, colors["1"], True, ((250,465), (626, 465), (626, 475), (250,475)), linewidth) ### Lvl Bar
 
 
 def ITEM():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
+    win.fill(colors["5"])
     pygame.draw.lines(win, colors['1'], False, ((0,25),(230,25), (230,15), (356,15),(356,25),(800,25)),linewidth)
     pygame.draw.rect(win, colors['5'], (250, 5, 86,16))
-    draw_text("STAT", text_font, colors['1'], 120,5)
-    draw_text("ITEMS", text_font, colors['1'], 260,5)
-    draw_text("DATA", text_font, colors['1'], 420,5)
-    draw_text("RADIO", text_font, colors['1'], 580,5)
+    draw_text("STAT", font30, colors['1'], 120,5)
+    draw_text("ITEMS", font30, colors['1'], 260,5)
+    draw_text("DATA", font30, colors['1'], 420,5)
+    draw_text("RADIO", font30, colors['1'], 580,5)
 
 def DATA():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
+    win.fill(colors["5"])
     pygame.draw.lines(win, colors['1'], False, ((0,25),(381,25), (381,15), (517,15),(517,25),(800,25)),linewidth)
     pygame.draw.rect(win, colors['5'], (410, 5, 76,16))
-    draw_text("STAT", text_font, colors['1'], 120,5)
-    draw_text("ITEMS", text_font, colors['1'], 260,5)
-    draw_text("DATA", text_font, colors['1'], 420,5)
-    draw_text("RADIO", text_font, colors['1'], 580,5)     
+    draw_text("STAT", font30, colors['1'], 120,5)
+    draw_text("ITEMS", font30, colors['1'], 260,5)
+    draw_text("DATA", font30, colors['1'], 420,5)
+    draw_text("RADIO", font30, colors['1'], 580,5)     
 
 def RADIO():
-    pygame.draw.rect(win, colors['5'], ((0,0, 800,48)))
+    win.fill(colors["5"])
     pygame.draw.lines(win, colors['1'], False, ((0,25),(541,25), (541,15), (683,15),(683,25),(800,25)),linewidth) # This draws a solid line that travels from one side of the screen to the other
     pygame.draw.rect(win, colors['5'], (570, 5, 86,16)) # This draws a black rectangle, color5 is black, leaving a empty space for the text
-    draw_text("STAT", text_font, colors['1'], 120,5) # These draw the title of the tabs
-    draw_text("ITEMS", text_font, colors['1'], 260,5)
-    draw_text("DATA", text_font, colors['1'], 420,5)
-    draw_text("RADIO", text_font, colors['1'], 580,5)
+    draw_text("STAT", font30, colors['1'], 120,5) # These draw the title of the tabs
+    draw_text("ITEMS", font30, colors['1'], 260,5)
+    draw_text("DATA", font30, colors['1'], 420,5)
+    draw_text("RADIO", font30, colors['1'], 580,5)
 
 # This sets the rinning program off, dont delete, otherwise it dont run. Idk why
 run = False
