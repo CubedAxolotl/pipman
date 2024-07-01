@@ -2,7 +2,7 @@ import pygame #I am using Pygame as the game engine for this projec
 
 pygame.init() #Initializing Pygame
 
-win = pygame.display.set_mode((800,480),pygame.FULLSCREEN) #I create a win object containing the display screen size
+win = pygame.display.set_mode((800,480)) #I create a win object containing the display screen size
 
 pygame.display.set_caption("PipBoy") # This sets the window's name
 
