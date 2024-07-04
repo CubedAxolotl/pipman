@@ -58,6 +58,7 @@ def STAT():
 
         pygame.draw.lines(win, colors["1"], True, ((250,465), (626, 465), (626, 475), (250,475)), linewidth) ### Lvl Bar
 
+        pygame.draw.rect(win, colors["3"], (230,350, 350,75))
     if subTabSelec["stat"] == 1:
         draw_text("STATUS", font25, colors['2'], 40,33)
         draw_text("SPECIAL", font25, colors['1'], 115,33)
@@ -210,6 +211,8 @@ while run:
             run = False        
         keyDetect() # keys are detected
         tabRender() # the screen is updated.
+        mousepos = pygame.mouse.get_pos()
+        print(mousepos)
  # ------------- Thangs to know ----------
  # Keep while run as neat a possible
  # while run is not good rn, there is a bunch of nested else if
