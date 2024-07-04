@@ -58,7 +58,13 @@ def STAT():
 
         pygame.draw.lines(win, colors["1"], True, ((250,465), (626, 465), (626, 475), (250,475)), linewidth) ### Lvl Bar
 
-        pygame.draw.rect(win, colors["3"], (230,350, 350,75))
+        pygame.draw.rect(win, colors["3"], (210,365, 75,75))
+        pygame.draw.rect(win, colors["3"], (290,365, 50,75))
+
+        pygame.draw.rect(win, colors["3"], (360,365, 75,75))
+        pygame.draw.rect(win, colors["3"], (440,365, 50,75))
+        pygame.draw.rect(win, colors["3"], (495,365, 50,75))
+        pygame.draw.rect(win, colors["3"], (550,365, 50,75))
     if subTabSelec["stat"] == 1:
         draw_text("STATUS", font25, colors['2'], 40,33)
         draw_text("SPECIAL", font25, colors['1'], 115,33)
