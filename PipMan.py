@@ -65,6 +65,15 @@ def STAT():
         pygame.draw.rect(win, colors["3"], (440,365, 50,75))
         pygame.draw.rect(win, colors["3"], (495,365, 50,75))
         pygame.draw.rect(win, colors["3"], (550,365, 50,75))
+
+        pygame.draw.rect(win, colors["test"], (335,80, 128,256))
+
+        pygame.draw.rect(win, colors["1"], (362,345, 70,10))
+        pygame.draw.rect(win, colors["1"], (480,260, 70,10))
+        pygame.draw.rect(win, colors["1"], (480,130, 70,10))
+        pygame.draw.rect(win, colors["1"], (245,130, 70,10))
+        pygame.draw.rect(win, colors["1"], (245,260, 70,10))
+        pygame.draw.rect(win, colors["1"], (362,60, 70,10))
     if subTabSelec["stat"] == 1:
         draw_text("STATUS", font25, colors['2'], 40,33)
         draw_text("SPECIAL", font25, colors['1'], 115,33)
