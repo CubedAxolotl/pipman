@@ -87,8 +87,17 @@ def STAT():
         draw_text("HP 171/171", font25, colors['1'], 20,463)
         draw_text("Level 19", font25, colors['1'], 180,463)  ### Letters
         draw_text("AP    80", font25, colors['1'], 680,463)
-
         pygame.draw.lines(win, colors["1"], True, ((250,465), (626, 465), (626, 475), (250,475)), linewidth) ### Lvl Bar
+        
+        
+        pygame.draw.rect(win, colors["1"], (10,60, 330, 45)) # Strenght
+        pygame.draw.rect(win, colors["1"], (10,115, 330, 45)) #Perception
+        pygame.draw.rect(win, colors["1"], (10,170, 330, 45)) #Endurance
+        pygame.draw.rect(win, colors["1"], (10,225, 330, 45)) # Charisma
+        pygame.draw.rect(win, colors["1"], (10,280, 330, 45)) # Intelligence
+        pygame.draw.rect(win, colors["1"], (10,335, 330, 45)) #
+        pygame.draw.rect(win, colors["1"], (10,390, 330, 45))
+        
     if subTabSelec["stat"] == 2:
         draw_text("SPECIAL", font25, colors['2'], 30,33)
         draw_text("PERKS", font25, colors['1'], 115,33)
