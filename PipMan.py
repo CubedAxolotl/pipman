@@ -1,6 +1,6 @@
 import pygame #I am using Pygame as the game engine for this projec
 
-pygame.init() #Initializing Pygame
+pygame.init() #Initializing pygame
 
 win = pygame.display.set_mode((800,480)) #I create a win object containing the display screen size
 
@@ -243,9 +243,7 @@ while run:
  # These should be put on their own function 
  # Don't draw inside of while run, it will get messy
  # Drawing is layered, things you draw first will be in the layer bellow others
- # This also means you need to fill the screan before changing to another tab, otherwise it would stack drawings
-
- # Meoww
+ # This also means you need to fill the screan before changing to another tab, otherwise it would stack drawing
 
 
 pygame.quit()
